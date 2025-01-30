@@ -1,0 +1,147 @@
+/* Container for the product list */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(220px, 1fr)
+  );
+  gap: 20px;
+  padding: 20px;
+  justify-items: center; /* Centers the cards within each grid cell */
+}
+.cart-icon {
+  cursor: pointer;
+}
+
+/* Individual product card styling */
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+/* 
+.product-card button {
+  background-color: #7d0ae9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  outline: none;
+}
+
+.product-card button:hover {
+  background-color: #141e29; 
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* Improved hover effect for product card */
+.product-card:hover {
+  transform: translateY(-8px) scale(1.05); /* Slightly lifts and zooms in the card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  opacity: 0.98; /* Slight opacity change for a soft hover feel */
+}
+
+/* Product image hover effect */
+.product-card:hover img {
+  transform: scale(1.1); /* Zoom in the image */
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+/* Image styling */
+.product-card img {
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth transition for image zoom */
+}
+
+/* Product title */
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Product description */
+.product-card p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Price styling */
+.product-card p:last-of-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 10px;
+}
+
+/* Image styling */
+.product-card img {
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+  width: 100%;
+  height: 180px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth transition for image zoom */
+}
+.search-box {
+  margin-top: 10px;
+  border: 1px solid black;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(180px, 1fr)
+    ); /* Adjusts grid for smaller screens */
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 1rem;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+  }
+
+  .product-card p:last-of-type {
+    font-size: 1rem;
+  }
+}
