@@ -5,7 +5,6 @@ import Shimmer from "../Shimmer";
 import useProduct from "../../utils/useProducts";
 import UserContext from "../../utils/UserContext";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../utils/cartSlice";
 
 // New code might or may not work
 const ProductInfo = () => {
