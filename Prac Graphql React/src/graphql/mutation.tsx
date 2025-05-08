@@ -40,15 +40,18 @@ export const CREATE_TASK = gql`
       task_name
       description
       # Fix:-
-      # users{
-      #   id
-      #   role
-      #   email
-      # }
+      taskUsers {
+        id
+        # task_priority
+        # users {
+        #   id
+        #   role
+        #   email
+        # }
+      } 
     }
   }
 `;
-
 
 export const UPDATE_TASK = gql`
   mutation UpdateTask($updateTask: UpdateTaskInput!) {
@@ -70,7 +73,7 @@ export const UPDATE_MEMBER_TASK = gql`
   }
 `;
 
-export const DELETE_TASK= gql`
+export const DELETE_TASK = gql`
   mutation DeleteTask($id: Int!) {
     deleteTask(id: $id) {
       id

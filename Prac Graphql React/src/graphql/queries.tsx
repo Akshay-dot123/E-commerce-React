@@ -6,6 +6,9 @@ export const FIND_ALL_PROJECTS = gql`
       id
       project_name
       description
+      completedPercentage
+      totalTasks
+      completedTasks
       tasks {
         id
         task_name
@@ -21,6 +24,13 @@ export const FIND_ALL_TASKS = gql`
       id
       task_name
       description
+      project{
+        id
+        project_name
+      }
+      # taskUsers{
+      #   id
+      # }
     }
   }
 `;
@@ -58,15 +68,15 @@ export const FIND_ALL_USER_TASKS = gql`
       id
       task_status
       task_priority
-      task{
+      task {
         projectId
         task_name
         description
         project {
-        project_name
-        description
+          project_name
+          description
+        }
       }
-    }
       user {
         id
         email

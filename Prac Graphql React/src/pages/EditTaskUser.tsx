@@ -92,8 +92,8 @@ const EditTaskUser = () => {
           <option value="" disabled>
             Select Task Status
           </option>
-          <option value="In_Progress">IN_PROGRESS</option>
           <option value="To_Do">TO_DO</option>
+          <option value="In_Progress">IN_PROGRESS</option>
           <option value="Completed">COMPLETED</option>
         </select>
         <select

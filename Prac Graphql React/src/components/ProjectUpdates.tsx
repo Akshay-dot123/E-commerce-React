@@ -9,11 +9,11 @@ const PROJECT_CREATED = gql`
       id
       project_name
       description
-      users {
-        id
-        email
-        role
-      }
+      # users {
+      #   id
+      #   email
+      #   role
+      # }
     }
   }
 `;
@@ -23,6 +23,9 @@ const ProjectUpdates = () => {
   const userId = decoded?.id;
   const { data, loading } = useSubscription(PROJECT_CREATED, {
     variables: { userId },
+    onSubscriptionData: ({ subscriptionData }) => {
+      console.log('New Project received:');
+    },
   });
   const project = data?.projectCreated;
   console.log("project====>", project);

@@ -4,6 +4,7 @@ import { FIND_ALL_TASKS } from "../graphql/queries";
 import { Link, Outlet, useParams } from "react-router-dom";
 import { DELETE_TASK } from "../graphql/mutation";
 import { toast } from "react-toastify";
+import TaskUpdates from "../components/TaskUpdates";
 
 const TaskTable = () => {
   const { id } = useParams();
@@ -37,6 +38,7 @@ const TaskTable = () => {
   }
   return (
     <div>
+      <TaskUpdates/>
       <h2>All Tasks</h2>
       <div style={{ display: "flex", justifyContent:"space-evenly"}}>
         <Link to="/profile/projects" style={{ margin: "0px 10px" }}>
@@ -50,6 +52,7 @@ const TaskTable = () => {
           <thead>
             <tr>
               <th style={{width:"10px"}}>Task Id</th>
+              <th style={{width:"100px"}}>Project Name</th>
               <th style={{width:"100px"}}>Task Name</th>
               <th style={{width:"150px"}}>Description</th>
               <th style={{width:"10px"}}>Edit Tasks</th>
@@ -61,6 +64,7 @@ const TaskTable = () => {
               <tr key={task.id}>
                 <td>{task.id}</td>
                 {/* <td><Link to={`${task.id}`}>{task.id}</Link></td> */}
+                <td style={{maxWidth:"200px",overflow:"auto", whiteSpace:"nowrap"}}>{task.project.project_name}</td>
                 <td style={{maxWidth:"200px",overflow:"auto", whiteSpace:"nowrap"}}>{task.task_name}</td>
                 <td style={{maxWidth:"300px",overflow:"auto", whiteSpace:"nowrap"}}>{task.description}</td>
                 <td>

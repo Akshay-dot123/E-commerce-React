@@ -68,6 +68,7 @@ import ProjectUpdates from "../components/ProjectUpdates";
 const ProjectTable = () => {
   const { id } = useParams();
   const { data, loading, error, refetch } = useQuery(FIND_ALL_PROJECTS);
+  console.log("data===========>",data)
   const [deleteProject] = useMutation(DELETE_PROJECT, {
     onCompleted: () => {
       refetch(); // Refresh the projects list after delete
@@ -117,6 +118,9 @@ const ProjectTable = () => {
               <th style={{ width: "10px" }}>Project Id</th>
               <th style={{ width: "100px" }}>Project Name</th>
               <th style={{ width: "200px" }}>Description</th>
+              <th style={{ width: "10px" }}>Completed % Project</th>
+              <th style={{ width: "10px" }}>Completed Tasks</th>
+              <th style={{ width: "10px" }}>Total Tasks</th>
               <th style={{ width: "10px" }}>Edit Project</th>
               <th style={{ width: "10px" }}>Delete Project</th>
               {/* <th>Tasks</th> */}
@@ -147,12 +151,39 @@ const ProjectTable = () => {
                 </td>
                 <td
                   style={{
-                    maxWidth: "300px",
+                    maxWidth: "200px",
                     overflow: "auto",
                     whiteSpace: "nowrap",
                   }}
                 >
                   {project.description}
+                </td>
+                <td
+                  style={{
+                    maxWidth: "300px",
+                    overflow: "auto",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {project.completedPercentage}
+                </td>
+                <td
+                  style={{
+                    maxWidth: "300px",
+                    overflow: "auto",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {project.completedTasks}
+                </td>
+                <td
+                  style={{
+                    maxWidth: "300px",
+                    overflow: "auto",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {project.totalTasks}
                 </td>
                 <td
                   style={{

@@ -9,6 +9,7 @@ const TaskForm = () => {
   const [createTask, { data, loading, error }] = useMutation(CREATE_TASK, {
     refetchQueries: [{ query: FIND_ALL_TASKS }],
   });
+  console.log(data)
 
   const handleCreateTask = async () => {
     if (!newTask.task_name || newTask.task_name.trim().length<3) {
@@ -39,7 +40,6 @@ const TaskForm = () => {
       console.error("Error creating task:", err.message);
     }
   };
-
   return (
     <>
       <div
@@ -153,7 +153,7 @@ const TaskForm = () => {
                 <td>{data.createTask.id}</td>
                 <td>{data.createTask.task_name}</td>
               </tr>
-              {/* {data.createTask.users.map((user)=>(
+              {/* {data.createTask.taskUsers.map((user)=>(
                 <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.email}</td>
