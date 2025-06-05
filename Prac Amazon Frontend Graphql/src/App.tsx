@@ -13,6 +13,7 @@ import Cart from "./components/Cart";
 import { useEffect } from "react";
 import Pay from "./components/Pay";
 import ProtectedLayout from "./Protected Route/ProtectedLayout";
+import Profile from "./components/Profile";
 
 function App() {
   const decoded = getDecodedToken();
@@ -46,11 +47,12 @@ function App() {
             </ProtectedRoute>
           }
         ></Route> */}
-         <Route element={<ProtectedLayout />}>
-         <Route path="/products" element={<Dashboard />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/payment" element={<Pay />} />
-         </Route>
+        <Route element={<ProtectedLayout />}>
+          <Route path="/products" element={<Dashboard />} />
+          <Route path="/account" element={<Profile />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<Pay />} />
+        </Route>
         <Route path="*" element={<h1>Page Not Found</h1>}></Route>
       </Routes>
     </BrowserRouter>

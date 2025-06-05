@@ -20,9 +20,9 @@ const Cart = () => {
   };
   return (
     <>
-    <div className="p-6">
+    <div>
       <Link to="/products">
-        <button className="p-2 bg-green-300 rounded-xl">Add Product</button>
+        <button className="p-2 bg-green-300 rounded-xl mx-6 mt-6">Add Product</button>
       </Link>
       <Link to="/payment">
         <button onClick={handleBuy} className="p-2 bg-orange-300 rounded-xl">

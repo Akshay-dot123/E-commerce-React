@@ -26,7 +26,7 @@ const Pay = () => {
     );
   }
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-[80vh] bg-gray-100 p-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Cart Items */}
         <div className="md:col-span-2 space-y-4">
@@ -40,7 +40,7 @@ const Pay = () => {
                 src={item.product.link}
                 alt={item.product.name}
                 width="170"
-                height="200"
+                style={{ maxHeight: "100px" }}
                 className="object-contain"
               />
               <div className="flex-1">

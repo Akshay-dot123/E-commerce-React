@@ -30,3 +30,12 @@ export const FIND_ALL_CART_PRODUCTS = gql`
     }
   }
 `;
+
+// Still not setup
+// export const GET_PROFILE = gql`
+//   query GetProfile {
+//     profile {
+//       id
+//     }
+//   }
+// `;
